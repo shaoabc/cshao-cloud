@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--如果不需要生成example的话将targetRuntime设置为MyBatis3Simple即可-->
+    <context id="test" targetRuntime="MyBatis3">
+
+        <!-- 为sql关键字添加分隔符 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <commentGenerator>
+            <!-- 生成的注释是否包含生成的时间，一般设置为true，不生成时间 -->
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ：false:否-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/slldb?autoReconnect=true" userId="root"
+                        password="12345678">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!-- 是否将数据库中的decimal类型转换为java的BigDecimal类型-->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 实体类生成的位置 -->
+        <javaModelGenerator targetPackage="cn.cshao.common.model.slldb"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--  *Mapper.xml 文件的位置  -->
+        <sqlMapGenerator targetPackage="mapper.slldb"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--Mapper dao接口文件的位置  -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="cn.cshao.common.dao.slldb"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成哪些表 注意后面的属性，如果不需要Example查询工具类 将这几个属性设置为false即可，
+         如果有多张表，复制粘贴即可-->
+
+<!--
+        <table tableName="sll_patient"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="pa_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_patient_img"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_pharmacy"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="ph_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_patient_addr"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_agent"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="ag_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_medicine"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="md_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_region"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="rgn_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_ag_hp_rel"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_medicine_conf"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_med_trace"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_phar_order"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="ord_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_order_detail"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="det_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_dr_pa_rel"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_doctor"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="dr_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_medical_audit"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="ma_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="sll_store_detail"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+-->
+
+        <table tableName="sll_agent"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="ag_id" sqlStatement="JDBC"/>
+        </table>
+
+<!--        <table tableName="hs_xy_employee"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="emp_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="hs_patient"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="pa_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="hs_patient_label"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="lbl_id" sqlStatement="JDBC"/>
+        </table>
+
+        <table tableName="hs_pa_lbl_rel"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true"
+        >
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+    </context>
+</generatorConfiguration>

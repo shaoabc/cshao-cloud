@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bit.framework:framework-file:0.0.1-SNAPSHOTS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/com/bit/framework/framework-file/0.0.1-SNAPSHOTS/framework-file-0.0.1-SNAPSHOTS.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/com/bit/framework/framework-file/0.0.1-SNAPSHOTS/framework-file-0.0.1-SNAPSHOTS-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/com/bit/framework/framework-file/0.0.1-SNAPSHOTS/framework-file-0.0.1-SNAPSHOTS-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

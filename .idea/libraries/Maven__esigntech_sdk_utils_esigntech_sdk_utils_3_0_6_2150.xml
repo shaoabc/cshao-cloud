@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: esigntech-sdk-utils:esigntech-sdk-utils:3.0.6.2150">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/esigntech-sdk-utils/esigntech-sdk-utils/3.0.6.2150/esigntech-sdk-utils-3.0.6.2150.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/esigntech-sdk-utils/esigntech-sdk-utils/3.0.6.2150/esigntech-sdk-utils-3.0.6.2150-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../java/tools/maven-repository/esigntech-sdk-utils/esigntech-sdk-utils/3.0.6.2150/esigntech-sdk-utils-3.0.6.2150-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

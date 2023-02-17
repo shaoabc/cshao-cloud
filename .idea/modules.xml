@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/cshao-cloud.iml" filepath="$PROJECT_DIR$/.idea/cshao-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-cloud-database/sc-cloud-database.iml" filepath="$PROJECT_DIR$/sc-cloud-database/sc-cloud-database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-cloud-manage/sc-cloud-manage.iml" filepath="$PROJECT_DIR$/sc-cloud-manage/sc-cloud-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-cloud-parent/sc-cloud-parent.iml" filepath="$PROJECT_DIR$/sc-cloud-parent/sc-cloud-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sc-cloud-tools/sc-cloud-tools.iml" filepath="$PROJECT_DIR$/sc-cloud-tools/sc-cloud-tools.iml" />
+    </modules>
+  </component>
+</project>
