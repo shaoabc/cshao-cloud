@@ -30,8 +30,8 @@ public class HsDatasourceConf {
     /**
      * 精确到目录，以便跟其他数据源隔离
      */
-    static final String PACKAGE = "cn.cshao.common.dao.slldb";
-    static final String MAPPER_LOCATION = "classpath:mapper.slldb/**/*.xml";
+    static final String PACKAGE = "cn.cshao.common.dao.hsdb";
+    static final String MAPPER_LOCATION = "classpath:mapper/hsdb/**/*.xml";
 
     @Autowired
     private HsDbProperties properties;

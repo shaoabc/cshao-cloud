@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @company
  * @create 2023-02-17 6:42 下午
  */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 @EnableTransactionManagement
 @EnableScheduling
 @EnableFeignClients
