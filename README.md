@@ -1,6 +1,7 @@
 # cshao-cloud
 spring cloud 全流程部署运行
 项目简介
+
 spring cloud 项目：
     sc-cloud-parent.  : 父类目录，以下所有的项目都是以父类为parent 
     sc-cloud-database : 公共数据源 mybaties generator 插件自动生成 dao / mapper / examle
