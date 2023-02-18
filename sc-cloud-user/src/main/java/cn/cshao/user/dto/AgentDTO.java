@@ -20,4 +20,7 @@ public class AgentDTO extends QueryPageDTO{
     private String agNo;
     @ApiModelProperty("志愿者名称")
     private String agNm;
+
+    @ApiModelProperty("医院名称--支持模糊搜索")
+    private String hospNm;
 }

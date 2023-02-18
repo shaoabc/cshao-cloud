@@ -20,7 +20,7 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/hsdb?autoReconnect=true" userId="root"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/slldb?autoReconnect=true" userId="root"
                         password="12345678">
         </jdbcConnection>
 
@@ -30,21 +30,21 @@
         </javaTypeResolver>
 
         <!-- 实体类生成的位置 -->
-        <javaModelGenerator targetPackage="cn.cshao.common.model.hsdb"
+        <javaModelGenerator targetPackage="cn.cshao.common.model.slldb"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--  *Mapper.xml 文件的位置  -->
-        <sqlMapGenerator targetPackage="mapper.hsdb"
+        <sqlMapGenerator targetPackage="mapper.slldb"
                          targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!--Mapper dao接口文件的位置  -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="cn.cshao.common.dao.hsdb"
+                             targetPackage="cn.cshao.common.dao.slldb"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
@@ -214,14 +214,14 @@
         </table>
 -->
 
-        <table tableName="hs_district"
+        <table tableName="sll_ag_hp_rel"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
                selectByExampleQueryId="true"
         >
-            <generatedKey column="dist_id" sqlStatement="JDBC"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 
 <!--        <table tableName="hs_xy_employee"

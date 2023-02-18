@@ -43,4 +43,11 @@ public class AgentApplyController {
     public PageInfo<AgentInfoVO> queryAgentPageList(@RequestBody @Valid AgentDTO dto) {
         return this.agentApplyService.queryAgentPageList(dto);
     }
+
+    @ApiOperation(value = "2.获取指定医院的志愿者信息")
+    @ApiOperationSupport(order = 2)
+    @PostMapping(value = "/queryAgHpRelList")
+    public PageInfo<AgentInfoVO> queryAgHpRelList(@RequestBody @Valid AgentDTO dto) {
+        return this.agentApplyService.queryAgHpRelList(dto);
+    }
 }
