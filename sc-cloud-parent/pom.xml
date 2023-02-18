@@ -26,6 +26,7 @@
         <module>../sc-cloud-database</module>
         <module>../sc-cloud-tools</module>
         <module>../sc-cloud-manage</module>
+        <module>../sc-cloud-user</module>
     </modules>
 
     <dependencies>

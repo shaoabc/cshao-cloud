@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cd-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 82.157.21.129:8849
