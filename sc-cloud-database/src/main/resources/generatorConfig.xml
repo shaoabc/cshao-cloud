@@ -214,14 +214,14 @@
         </table>
 -->
 
-        <table tableName="hs_hospital"
+        <table tableName="hs_district"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
                selectByExampleQueryId="true"
         >
-            <generatedKey column="hosp_id" sqlStatement="JDBC"/>
+            <generatedKey column="dist_id" sqlStatement="JDBC"/>
         </table>
 
 <!--        <table tableName="hs_xy_employee"
