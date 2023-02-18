@@ -45,4 +45,11 @@ public class SwaggerController {
     public RestResult<CommonItemVO> queryCommonItemPageList(@RequestBody @Valid ItemDTO dto) {
         return RestResult.success(this.swaggerService.queryCommonItemPageList(dto));
     }
+
+    @ApiOperation(value = "2.测试")
+    @ApiOperationSupport(order = 2)
+    @PostMapping(value = "/queryCommonItemPageList")
+    public RestResult<CommonItemVO> queryCommonItemPageList2(@RequestBody @Valid ItemDTO dto) {
+        return RestResult.success(this.swaggerService.queryCommonItemPageList(dto));
+    }
 }
