@@ -1,5 +1,6 @@
 package cn.cshao.user.cmpt.cache;
 
+import cn.cshao.common.model.hsdb.HsDistrict;
 import cn.cshao.user.feign.IGenericDataFeign;
 import cn.cshao.user.utils.cache.base.AppCache;
 import cn.cshao.user.utils.cache.proxy.AppCacheProxy;
@@ -17,6 +18,7 @@ import org.springframework.util.Assert;
 import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.Proxy;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -36,13 +38,13 @@ public class ApplicationCache<T> implements ApplicationRunner, BeanPostProcessor
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        List<HsDistrict> distRestResult = dataFeign.pullDistrict();
-//        List<HsDistrict> districts = null;
-//        if (null != distRestResult ) {
-//            districts = distRestResult ;
-//            log.info("distRestResult-size:{}", districts.size());
-//            container.put(AppCache.DISTRICT, districts);
-//        }
+        List<HsDistrict> distRestResult = dataFeign.pullDistrict();
+        List<HsDistrict> districts = null;
+        if (null != distRestResult ) {
+            districts = distRestResult ;
+            log.info("distRestResult-size:{}", districts.size());
+            container.put(AppCache.DISTRICT, districts);
+        }
 
         RestResult<Map<String, HospIdMapVO>> hospRestResult = dataFeign.pullMapHospital();
         Map<String, HospIdMapVO> hospIdMap = null;
