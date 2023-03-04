@@ -70,6 +70,12 @@
             <artifactId>tencentcloud-sdk-java-ocr</artifactId>
             <version>3.1.631</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-cells</artifactId>
+            <version>18.9</version>
+        </dependency>
     </dependencies>
 
     <build>
