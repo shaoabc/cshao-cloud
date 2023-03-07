@@ -5,15 +5,23 @@ import cn.cshao.common.model.slldb.SllAgent;
 import cn.cshao.common.model.slldb.SllAgentExample;
 import cn.cshao.user.dto.agent.AgentInput;
 import cn.cshao.user.dto.excel.ExportAgentListModel;
+import com.alibaba.excel.EasyExcel;
+import cs.cshao.common.exc.UserException;
+import cs.cshao.common.excel.ExcelCheckVO;
+import cs.cshao.common.excel.ExcelHandlerUtils;
+import cs.cshao.common.excel.ImportGenericListener;
 import cs.cshao.common.utils.map.ModelMapUtils;
 import cs.cshao.common.utils.string.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author cshao
@@ -49,7 +57,45 @@ public class UserService {
         }
         return exportModelList;
     }
-     // 生产pdf
+
+    /**
+     * 校验导入数据是否错误
+     * @param file
+     * @return
+     */
+    public List<ExcelCheckVO> checkImport(MultipartFile file) {
+        ImportGenericListener<ExportAgentListModel> listener = new ImportGenericListener<>();
+        try{
+            EasyExcel.read(file.getInputStream(),ExportAgentListModel.class,listener).sheet().doRead();
+        }catch (IOException e){
+            throw new UserException("Excel读取出错,请检查格式是否正确");
+        }
+        List<ExportAgentListModel> list = listener.getList();
+        //NO.1 基础性校验是否存在空
+        List<ExcelCheckVO> checkResultList = ExcelHandlerUtils.NotNullAndRepeatCheck(list,ExportAgentListModel.class);
+        //NO.2 基础校验过了再进行复杂校验--业务校验
+        if(CollectionUtils.isEmpty(checkResultList)){
+             //查询数据库中是否存在数据
+            // 处理返回并校验  row行自增
+            AtomicInteger row = new AtomicInteger(1);
+            list.forEach(agent->{
+                row.incrementAndGet();
+                SllAgentExample example =new SllAgentExample();
+                example.createCriteria().andAgNmEqualTo(agent.getAgNm()).andMobileEqualTo(agent.getMobile());
+                List<SllAgent> agentList = sllAgentMapper.selectByExample(example);
+                if(CollectionUtils.isNotEmpty(agentList)){
+                    ExcelCheckVO output = new ExcelCheckVO();
+                    output.setExcelRow(row.get());
+                    output.setExcelCol(1);
+                    output.setErrorMsg("姓名:"+agentList.get(0).getAgNm()+","+"手机号:"+agentList.get(0).getMobile()+",该志愿者已存在");
+                    checkResultList.add(output);
+                }
+            });
+        }
+
+        return checkResultList;
+    }
+    // 生产pdf
 //    public ResourceURI generateAgentPdf(AgentInput input) throws IOException {
 //        // 获取系统tmp路径和resource资源模板文件
 //        String sysTmpPath = System.getProperty("java.io.tmpdir")
