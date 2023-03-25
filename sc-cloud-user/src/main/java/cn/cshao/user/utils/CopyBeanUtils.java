@@ -1,4 +1,4 @@
-package cn.cshao.user.utils.cache;
+package cn.cshao.user.utils;
 
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;

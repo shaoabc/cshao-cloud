@@ -46,3 +46,18 @@ feign:
 ribbon:
   ReadTimeout: 100000
   ConnectTimeout: 100000
+
+
+# swagger配置
+knife4j:
+  production: false #是否是生产环境,true则关闭swagger
+
+# oss配置 购买的腾讯云账号下 accessKeyId  accessKeySecret  cos桶名称
+oss:
+  endpoint: http://cos.ap-shanghai.myqcloud.com/
+  accessKeyId: XXXXXXX
+  accessKeySecret: XXXXXXX
+  bucketName: XXXXX
+shoss:
+  accessKeyId: XXXXXXXXX
+  accessKeySecret: XXXXXXXXXX

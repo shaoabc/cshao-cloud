@@ -1,4 +1,4 @@
-package cn.cshao.user.utils.cache;
+package cn.cshao.user.utils;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -20,10 +20,11 @@ import java.util.Map;
  * 二维码工具
  * @Author:debug (SteadyJack)
  * @Link: weixin-> debug0868  qq-> 1948831260
- * @Date: 2020/11/16 22:38
+ * @Date:
  **/
 @Slf4j
 public class QRCodeUtil {
+
     /**
      * CODE_WIDTH：二维码宽度，单位像素
      */
@@ -38,8 +39,8 @@ public class QRCodeUtil {
     private static final int FRONT_COLOR = 0x000000;
     /**
      * BACKGROUND_COLOR：二维码背景色，0xFFFFFF 表示白色
-     * 演示用 16 进制表示，和前端页面 CSS 的取色是一样的，注意前后景颜色应该对比明显，如常见的黑白
      */
+    //演示用 16 进制表示，和前端页面 CSS 的取色是一样的，注意前后景颜色应该对比明显，如常见的黑白
     private static final int BACKGROUND_COLOR = 0xFFFFFF;
 
     public static void createCodeToFile(String content, File codeImgFileSaveDir, String fileName) {

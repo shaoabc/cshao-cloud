@@ -1,4 +1,4 @@
-package cn.cshao.user.utils.cache;
+package cn.cshao.user.utils;
 
 import cn.cshao.user.dto.excel.ExcelCheckOutput;
 import com.alibaba.excel.EasyExcel;

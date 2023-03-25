@@ -7,3 +7,11 @@ spring:
     nacos:
       discovery:
         server-addr: 82.157.21.129:8849
+# 短信模板数据 ,短信运营商对应的模版数据
+sms:
+  sid: XXXXXXX
+  appid: XXXXXXX
+  templateCode: XXXXXXX
+  token: XXXXXXX
+  url: XXXXXXX
+  templateDesc: 您的验证码&code&，该验证码5分钟内有效，请勿告知他人。

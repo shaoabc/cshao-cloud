@@ -63,14 +63,14 @@
         </table>
 -->
 
-        <table tableName="sll_operate_log"
+        <table tableName="sll_images"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="true"
                enableSelectByExample="true"
                selectByExampleQueryId="true"
         >
-            <generatedKey column="op_id" sqlStatement="JDBC"/>
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
         </table>
 
 <!--        <table tableName="hs_xy_employee"

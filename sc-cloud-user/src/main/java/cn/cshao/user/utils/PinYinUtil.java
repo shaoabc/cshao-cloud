@@ -1,4 +1,4 @@
-package cn.cshao.user.utils.cache;
+package cn.cshao.user.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import net.sourceforge.pinyin4j.PinyinHelper;

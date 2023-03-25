@@ -1,4 +1,4 @@
-package cn.cshao.user.utils.cache.json;
+package cn.cshao.user.utils.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
