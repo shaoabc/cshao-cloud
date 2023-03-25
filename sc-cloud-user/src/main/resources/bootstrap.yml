@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 82.157.21.129:8849
+        server-addr: 127.0.0.1:10008
 # 短信模板数据 ,短信运营商对应的模版数据
 sms:
   sid: XXXXXXX
