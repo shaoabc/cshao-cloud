@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 /**
  * @Desc 资源处理器
- * @Author hub5
+ * @Author cshao
  * @Date 2022/11/17 17:11
  **/
 @Component
