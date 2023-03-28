@@ -1,6 +1,6 @@
 package cn.cshao.user.cmpt.security.utils;
 
-import com.hspharm.pharma.cmpt.security.model.AuthUser;
+import cn.cshao.user.cmpt.security.model.AuthUser;
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

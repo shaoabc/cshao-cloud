@@ -1,6 +1,6 @@
 package cn.cshao.user.cmpt.security.model;
 
-import com.hspharm.pharma.cmpt.security.cons.SecurityConstants;
+import cn.cshao.user.cmpt.security.cons.SecurityConstants;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
