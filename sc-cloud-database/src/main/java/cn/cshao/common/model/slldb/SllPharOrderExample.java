@@ -1335,6 +1335,76 @@ public class SllPharOrderExample {
             return (Criteria) this;
         }
 
+        public Criteria andReasonDescIsNull() {
+            addCriterion("reason_desc is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescIsNotNull() {
+            addCriterion("reason_desc is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescEqualTo(String value) {
+            addCriterion("reason_desc =", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescNotEqualTo(String value) {
+            addCriterion("reason_desc <>", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescGreaterThan(String value) {
+            addCriterion("reason_desc >", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescGreaterThanOrEqualTo(String value) {
+            addCriterion("reason_desc >=", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescLessThan(String value) {
+            addCriterion("reason_desc <", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescLessThanOrEqualTo(String value) {
+            addCriterion("reason_desc <=", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescLike(String value) {
+            addCriterion("reason_desc like", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescNotLike(String value) {
+            addCriterion("reason_desc not like", value, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescIn(List<String> values) {
+            addCriterion("reason_desc in", values, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescNotIn(List<String> values) {
+            addCriterion("reason_desc not in", values, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescBetween(String value1, String value2) {
+            addCriterion("reason_desc between", value1, value2, "reasonDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andReasonDescNotBetween(String value1, String value2) {
+            addCriterion("reason_desc not between", value1, value2, "reasonDesc");
+            return (Criteria) this;
+        }
+
         public Criteria andStepNoIsNull() {
             addCriterion("step_no is null");
             return (Criteria) this;
@@ -1695,73 +1765,203 @@ public class SllPharOrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescIsNull() {
-            addCriterion("reason_desc is null");
+        public Criteria andAssignAuditorIsNull() {
+            addCriterion("assign_auditor is null");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescIsNotNull() {
-            addCriterion("reason_desc is not null");
+        public Criteria andAssignAuditorIsNotNull() {
+            addCriterion("assign_auditor is not null");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescEqualTo(String value) {
-            addCriterion("reason_desc =", value, "reasonDesc");
+        public Criteria andAssignAuditorEqualTo(String value) {
+            addCriterion("assign_auditor =", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescNotEqualTo(String value) {
-            addCriterion("reason_desc <>", value, "reasonDesc");
+        public Criteria andAssignAuditorNotEqualTo(String value) {
+            addCriterion("assign_auditor <>", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescGreaterThan(String value) {
-            addCriterion("reason_desc >", value, "reasonDesc");
+        public Criteria andAssignAuditorGreaterThan(String value) {
+            addCriterion("assign_auditor >", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescGreaterThanOrEqualTo(String value) {
-            addCriterion("reason_desc >=", value, "reasonDesc");
+        public Criteria andAssignAuditorGreaterThanOrEqualTo(String value) {
+            addCriterion("assign_auditor >=", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescLessThan(String value) {
-            addCriterion("reason_desc <", value, "reasonDesc");
+        public Criteria andAssignAuditorLessThan(String value) {
+            addCriterion("assign_auditor <", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescLessThanOrEqualTo(String value) {
-            addCriterion("reason_desc <=", value, "reasonDesc");
+        public Criteria andAssignAuditorLessThanOrEqualTo(String value) {
+            addCriterion("assign_auditor <=", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescLike(String value) {
-            addCriterion("reason_desc like", value, "reasonDesc");
+        public Criteria andAssignAuditorLike(String value) {
+            addCriterion("assign_auditor like", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescNotLike(String value) {
-            addCriterion("reason_desc not like", value, "reasonDesc");
+        public Criteria andAssignAuditorNotLike(String value) {
+            addCriterion("assign_auditor not like", value, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescIn(List<String> values) {
-            addCriterion("reason_desc in", values, "reasonDesc");
+        public Criteria andAssignAuditorIn(List<String> values) {
+            addCriterion("assign_auditor in", values, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescNotIn(List<String> values) {
-            addCriterion("reason_desc not in", values, "reasonDesc");
+        public Criteria andAssignAuditorNotIn(List<String> values) {
+            addCriterion("assign_auditor not in", values, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescBetween(String value1, String value2) {
-            addCriterion("reason_desc between", value1, value2, "reasonDesc");
+        public Criteria andAssignAuditorBetween(String value1, String value2) {
+            addCriterion("assign_auditor between", value1, value2, "assignAuditor");
             return (Criteria) this;
         }
 
-        public Criteria andReasonDescNotBetween(String value1, String value2) {
-            addCriterion("reason_desc not between", value1, value2, "reasonDesc");
+        public Criteria andAssignAuditorNotBetween(String value1, String value2) {
+            addCriterion("assign_auditor not between", value1, value2, "assignAuditor");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelIsNull() {
+            addCriterion("audit_inv_label is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelIsNotNull() {
+            addCriterion("audit_inv_label is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelEqualTo(String value) {
+            addCriterion("audit_inv_label =", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelNotEqualTo(String value) {
+            addCriterion("audit_inv_label <>", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelGreaterThan(String value) {
+            addCriterion("audit_inv_label >", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelGreaterThanOrEqualTo(String value) {
+            addCriterion("audit_inv_label >=", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelLessThan(String value) {
+            addCriterion("audit_inv_label <", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelLessThanOrEqualTo(String value) {
+            addCriterion("audit_inv_label <=", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelLike(String value) {
+            addCriterion("audit_inv_label like", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelNotLike(String value) {
+            addCriterion("audit_inv_label not like", value, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelIn(List<String> values) {
+            addCriterion("audit_inv_label in", values, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelNotIn(List<String> values) {
+            addCriterion("audit_inv_label not in", values, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelBetween(String value1, String value2) {
+            addCriterion("audit_inv_label between", value1, value2, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuditInvLabelNotBetween(String value1, String value2) {
+            addCriterion("audit_inv_label not between", value1, value2, "auditInvLabel");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleIsNull() {
+            addCriterion("auth_style is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleIsNotNull() {
+            addCriterion("auth_style is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleEqualTo(Byte value) {
+            addCriterion("auth_style =", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleNotEqualTo(Byte value) {
+            addCriterion("auth_style <>", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleGreaterThan(Byte value) {
+            addCriterion("auth_style >", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleGreaterThanOrEqualTo(Byte value) {
+            addCriterion("auth_style >=", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleLessThan(Byte value) {
+            addCriterion("auth_style <", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleLessThanOrEqualTo(Byte value) {
+            addCriterion("auth_style <=", value, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleIn(List<Byte> values) {
+            addCriterion("auth_style in", values, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleNotIn(List<Byte> values) {
+            addCriterion("auth_style not in", values, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleBetween(Byte value1, Byte value2) {
+            addCriterion("auth_style between", value1, value2, "authStyle");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthStyleNotBetween(Byte value1, Byte value2) {
+            addCriterion("auth_style not between", value1, value2, "authStyle");
             return (Criteria) this;
         }
     }

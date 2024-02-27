@@ -2,8 +2,9 @@ package cn.cshao.common.dao.slldb;
 
 import cn.cshao.common.model.slldb.SllPharOrder;
 import cn.cshao.common.model.slldb.SllPharOrderExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SllPharOrderMapper {
     long countByExample(SllPharOrderExample example);

@@ -22,13 +22,16 @@
     <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
     <result column="audit_rsn_set" jdbcType="VARCHAR" property="auditRsnSet" />
     <result column="audit_reason" jdbcType="VARCHAR" property="auditReason" />
+    <result column="reason_desc" jdbcType="VARCHAR" property="reasonDesc" />
     <result column="step_no" jdbcType="TINYINT" property="stepNo" />
     <result column="status" jdbcType="TINYINT" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_user" jdbcType="BIGINT" property="createUser" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="update_user" jdbcType="BIGINT" property="updateUser" />
-    <result column="reason_desc" jdbcType="VARCHAR" property="reasonDesc" />
+    <result column="assign_auditor" jdbcType="VARCHAR" property="assignAuditor" />
+    <result column="audit_inv_label" jdbcType="VARCHAR" property="auditInvLabel" />
+    <result column="auth_style" jdbcType="TINYINT" property="authStyle" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -91,8 +94,8 @@
   <sql id="Base_Column_List">
     ord_id, ord_no, pa_id, hp_id, md_id, md_round, phase_num, audit_num, buy_num, aid_num, 
     self_num, buy_ph_id, aid_ph_id, is_assist, assistor, push_time, auditor, audit_time, 
-    audit_rsn_set, audit_reason, step_no, `status`, create_time, create_user, update_time, 
-    update_user, reason_desc
+    audit_rsn_set, audit_reason, reason_desc, step_no, `status`, create_time, create_user, 
+    update_time, update_user, assign_auditor, audit_inv_label, auth_style
   </sql>
   <select id="selectByExample" parameterType="cn.cshao.common.model.slldb.SllPharOrderExample" resultMap="BaseResultMap">
     select
@@ -132,18 +135,20 @@
       self_num, buy_ph_id, aid_ph_id, 
       is_assist, assistor, push_time, 
       auditor, audit_time, audit_rsn_set, 
-      audit_reason, step_no, `status`, 
-      create_time, create_user, update_time, 
-      update_user, reason_desc)
+      audit_reason, reason_desc, step_no, 
+      `status`, create_time, create_user, 
+      update_time, update_user, assign_auditor, 
+      audit_inv_label, auth_style)
     values (#{ordNo,jdbcType=VARCHAR}, #{paId,jdbcType=BIGINT}, #{hpId,jdbcType=INTEGER}, 
       #{mdId,jdbcType=BIGINT}, #{mdRound,jdbcType=INTEGER}, #{phaseNum,jdbcType=INTEGER}, 
       #{auditNum,jdbcType=INTEGER}, #{buyNum,jdbcType=INTEGER}, #{aidNum,jdbcType=INTEGER}, 
       #{selfNum,jdbcType=INTEGER}, #{buyPhId,jdbcType=BIGINT}, #{aidPhId,jdbcType=BIGINT}, 
       #{isAssist,jdbcType=TINYINT}, #{assistor,jdbcType=BIGINT}, #{pushTime,jdbcType=TIMESTAMP}, 
       #{auditor,jdbcType=BIGINT}, #{auditTime,jdbcType=TIMESTAMP}, #{auditRsnSet,jdbcType=VARCHAR}, 
-      #{auditReason,jdbcType=VARCHAR}, #{stepNo,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{updateUser,jdbcType=BIGINT}, #{reasonDesc,jdbcType=VARCHAR})
+      #{auditReason,jdbcType=VARCHAR}, #{reasonDesc,jdbcType=VARCHAR}, #{stepNo,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=BIGINT}, #{assignAuditor,jdbcType=VARCHAR}, 
+      #{auditInvLabel,jdbcType=VARCHAR}, #{authStyle,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" keyColumn="ord_id" keyProperty="ordId" parameterType="cn.cshao.common.model.slldb.SllPharOrder" useGeneratedKeys="true">
     insert into sll_phar_order
@@ -205,6 +210,9 @@
       <if test="auditReason != null">
         audit_reason,
       </if>
+      <if test="reasonDesc != null">
+        reason_desc,
+      </if>
       <if test="stepNo != null">
         step_no,
       </if>
@@ -223,8 +231,14 @@
       <if test="updateUser != null">
         update_user,
       </if>
-      <if test="reasonDesc != null">
-        reason_desc,
+      <if test="assignAuditor != null">
+        assign_auditor,
+      </if>
+      <if test="auditInvLabel != null">
+        audit_inv_label,
+      </if>
+      <if test="authStyle != null">
+        auth_style,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -285,6 +299,9 @@
       <if test="auditReason != null">
         #{auditReason,jdbcType=VARCHAR},
       </if>
+      <if test="reasonDesc != null">
+        #{reasonDesc,jdbcType=VARCHAR},
+      </if>
       <if test="stepNo != null">
         #{stepNo,jdbcType=TINYINT},
       </if>
@@ -303,8 +320,14 @@
       <if test="updateUser != null">
         #{updateUser,jdbcType=BIGINT},
       </if>
-      <if test="reasonDesc != null">
-        #{reasonDesc,jdbcType=VARCHAR},
+      <if test="assignAuditor != null">
+        #{assignAuditor,jdbcType=VARCHAR},
+      </if>
+      <if test="auditInvLabel != null">
+        #{auditInvLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="authStyle != null">
+        #{authStyle,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -377,6 +400,9 @@
       <if test="record.auditReason != null">
         audit_reason = #{record.auditReason,jdbcType=VARCHAR},
       </if>
+      <if test="record.reasonDesc != null">
+        reason_desc = #{record.reasonDesc,jdbcType=VARCHAR},
+      </if>
       <if test="record.stepNo != null">
         step_no = #{record.stepNo,jdbcType=TINYINT},
       </if>
@@ -395,8 +421,14 @@
       <if test="record.updateUser != null">
         update_user = #{record.updateUser,jdbcType=BIGINT},
       </if>
-      <if test="record.reasonDesc != null">
-        reason_desc = #{record.reasonDesc,jdbcType=VARCHAR},
+      <if test="record.assignAuditor != null">
+        assign_auditor = #{record.assignAuditor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditInvLabel != null">
+        audit_inv_label = #{record.auditInvLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authStyle != null">
+        auth_style = #{record.authStyle,jdbcType=TINYINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -425,13 +457,16 @@
       audit_time = #{record.auditTime,jdbcType=TIMESTAMP},
       audit_rsn_set = #{record.auditRsnSet,jdbcType=VARCHAR},
       audit_reason = #{record.auditReason,jdbcType=VARCHAR},
+      reason_desc = #{record.reasonDesc,jdbcType=VARCHAR},
       step_no = #{record.stepNo,jdbcType=TINYINT},
       `status` = #{record.status,jdbcType=TINYINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       create_user = #{record.createUser,jdbcType=BIGINT},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       update_user = #{record.updateUser,jdbcType=BIGINT},
-      reason_desc = #{record.reasonDesc,jdbcType=VARCHAR}
+      assign_auditor = #{record.assignAuditor,jdbcType=VARCHAR},
+      audit_inv_label = #{record.auditInvLabel,jdbcType=VARCHAR},
+      auth_style = #{record.authStyle,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -496,6 +531,9 @@
       <if test="auditReason != null">
         audit_reason = #{auditReason,jdbcType=VARCHAR},
       </if>
+      <if test="reasonDesc != null">
+        reason_desc = #{reasonDesc,jdbcType=VARCHAR},
+      </if>
       <if test="stepNo != null">
         step_no = #{stepNo,jdbcType=TINYINT},
       </if>
@@ -514,8 +552,14 @@
       <if test="updateUser != null">
         update_user = #{updateUser,jdbcType=BIGINT},
       </if>
-      <if test="reasonDesc != null">
-        reason_desc = #{reasonDesc,jdbcType=VARCHAR},
+      <if test="assignAuditor != null">
+        assign_auditor = #{assignAuditor,jdbcType=VARCHAR},
+      </if>
+      <if test="auditInvLabel != null">
+        audit_inv_label = #{auditInvLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="authStyle != null">
+        auth_style = #{authStyle,jdbcType=TINYINT},
       </if>
     </set>
     where ord_id = #{ordId,jdbcType=BIGINT}
@@ -541,13 +585,16 @@
       audit_time = #{auditTime,jdbcType=TIMESTAMP},
       audit_rsn_set = #{auditRsnSet,jdbcType=VARCHAR},
       audit_reason = #{auditReason,jdbcType=VARCHAR},
+      reason_desc = #{reasonDesc,jdbcType=VARCHAR},
       step_no = #{stepNo,jdbcType=TINYINT},
       `status` = #{status,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_user = #{createUser,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_user = #{updateUser,jdbcType=BIGINT},
-      reason_desc = #{reasonDesc,jdbcType=VARCHAR}
+      assign_auditor = #{assignAuditor,jdbcType=VARCHAR},
+      audit_inv_label = #{auditInvLabel,jdbcType=VARCHAR},
+      auth_style = #{authStyle,jdbcType=TINYINT}
     where ord_id = #{ordId,jdbcType=BIGINT}
   </update>
 </mapper>

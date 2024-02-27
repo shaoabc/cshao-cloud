@@ -43,6 +43,8 @@ public class SllPharOrder {
 
     private String auditReason;
 
+    private String reasonDesc;
+
     private Byte stepNo;
 
     private Byte status;
@@ -55,7 +57,11 @@ public class SllPharOrder {
 
     private Long updateUser;
 
-    private String reasonDesc;
+    private String assignAuditor;
+
+    private String auditInvLabel;
+
+    private Byte authStyle;
 
     public Long getOrdId() {
         return ordId;
@@ -217,6 +223,14 @@ public class SllPharOrder {
         this.auditReason = auditReason == null ? null : auditReason.trim();
     }
 
+    public String getReasonDesc() {
+        return reasonDesc;
+    }
+
+    public void setReasonDesc(String reasonDesc) {
+        this.reasonDesc = reasonDesc == null ? null : reasonDesc.trim();
+    }
+
     public Byte getStepNo() {
         return stepNo;
     }
@@ -265,11 +279,27 @@ public class SllPharOrder {
         this.updateUser = updateUser;
     }
 
-    public String getReasonDesc() {
-        return reasonDesc;
+    public String getAssignAuditor() {
+        return assignAuditor;
     }
 
-    public void setReasonDesc(String reasonDesc) {
-        this.reasonDesc = reasonDesc == null ? null : reasonDesc.trim();
+    public void setAssignAuditor(String assignAuditor) {
+        this.assignAuditor = assignAuditor == null ? null : assignAuditor.trim();
+    }
+
+    public String getAuditInvLabel() {
+        return auditInvLabel;
+    }
+
+    public void setAuditInvLabel(String auditInvLabel) {
+        this.auditInvLabel = auditInvLabel == null ? null : auditInvLabel.trim();
+    }
+
+    public Byte getAuthStyle() {
+        return authStyle;
+    }
+
+    public void setAuthStyle(Byte authStyle) {
+        this.authStyle = authStyle;
     }
 }

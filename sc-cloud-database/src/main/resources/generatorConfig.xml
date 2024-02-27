@@ -20,13 +20,14 @@
 
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/slldb?autoReconnect=true" userId="root"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/beeh?autoReconnect=true" userId="root"
                         password="12345678">
         </jdbcConnection>
 
         <javaTypeResolver>
             <!-- 是否将数据库中的decimal类型转换为java的BigDecimal类型-->
             <property name="forceBigDecimals" value="false"/>
+
         </javaTypeResolver>
 
         <!-- 实体类生成的位置 -->
@@ -63,47 +64,7 @@
         </table>
 -->
 
-        <table tableName="sll_images"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               selectByExampleQueryId="true"
-        >
-<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
-        </table>
-
-<!--        <table tableName="hs_xy_employee"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               selectByExampleQueryId="true"
-        >
-            <generatedKey column="emp_id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="hs_patient"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               selectByExampleQueryId="true"
-        >
-            <generatedKey column="pa_id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="hs_patient_label"
-               enableCountByExample="true"
-               enableUpdateByExample="true"
-               enableDeleteByExample="true"
-               enableSelectByExample="true"
-               selectByExampleQueryId="true"
-        >
-            <generatedKey column="lbl_id" sqlStatement="JDBC"/>
-        </table>
-
-        <table tableName="hs_pa_lbl_rel"
+        <table tableName="tb_customer_info"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="true"
@@ -111,6 +72,7 @@
                selectByExampleQueryId="true"
         >
             <generatedKey column="id" sqlStatement="JDBC"/>
-        </table>-->
+        </table>
     </context>
+
 </generatorConfiguration>
